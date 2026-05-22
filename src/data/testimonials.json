@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Rajesh Patel",
+    "event": "Wedding Decoration",
+    "rating": 5,
+    "review_en": "Ankit bhai did an amazing job decorating our wedding venue. The mandap was breathtaking!",
+    "review_gu": "અંકિત ભાઈએ અમારા લગ્ન સ્થળને ખૂબ સરસ સજાવ્યું. મંડપ અદ્ભુત હતો!"
+  },
+  {
+    "name": "Priya Shah",
+    "event": "Mehendi Ceremony",
+    "rating": 5,
+    "review_en": "The Mehendi setup was gorgeous. Flowers were fresh and the decoration was beyond expectations.",
+    "review_gu": "મહેંદીની સેટઅપ ખૂબ સુંદર હતી. ફૂલ ખૂબ તાજા હતા અને સજાવટ અપેક્ષા કરતાં વધુ સારી હતી."
+  },
+  {
+    "name": "Kiran Desai",
+    "event": "Haldi Setup",
+    "rating": 5,
+    "review_en": "Very professional team. Everything was set up on time. Highly recommend!",
+    "review_gu": "ખૂબ વ્યાવસાયિક ટીમ. બધું સમયસર ગોઠવ્યું. ભારપૂર્વક ભલામણ!"
+  }
+]

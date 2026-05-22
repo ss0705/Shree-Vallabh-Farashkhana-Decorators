@@ -1,0 +1,6 @@
+{
+  "nav": { "home": "Home", "services": "Services", "gallery": "Gallery", "about": "About", "contact": "Contact", "call": "Call Now" },
+  "hero": { "quote": "Get Free Quote", "work": "View Our Work" },
+  "sections": { "about": "About Shree Vallabh Decorators", "services": "Event Services & Rentals", "gallery": "Our Work Speaks", "gallerySub": "Real events decorated by Shree Vallabh", "why": "Why Vadodara Trusts Us", "testimonials": "Client Blessings", "contact": "Book Your Event / Get Free Quote" },
+  "form": { "name": "Full Name", "mobile": "Mobile Number", "email": "Email Address", "event": "Event Type", "date": "Event Date", "location": "Event Location", "message": "Message / Requirements", "submit": "Send Inquiry" }
+}
