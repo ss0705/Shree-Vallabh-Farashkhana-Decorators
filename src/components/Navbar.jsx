@@ -7,9 +7,9 @@ import useSiteData from "../hooks/useSiteData";
 
 const navItems = [
   ["home", "/#home", "home"],
-  ["services", "/#services", "services"],
+  ["services", "/services", "services"],
   ["gallery", "/gallery", "gallery"],
-  ["about", "/#about", "about"],
+  ["about", "/about", "about"],
   ["contact", "/contact", "contact"],
 ];
 
@@ -133,7 +133,7 @@ function Navbar() {
               setOpen(false);
             }}
             className="flex items-center gap-3 transition-all duration-300 hover:opacity-80"
-            aria-label="Shree Vallabh Home"
+            aria-label=" Vallabh Home"
           >
             {content.logoUrl && !logoError ? (
               <img
@@ -149,7 +149,7 @@ function Navbar() {
                 </div>
                 <div className="hidden sm:block">
                   <h2 className="text-base md:text-lg font-bold text-gray-800">
-                    Shree Vallabh
+                     Vallabh
                   </h2>
                   <p className="text-[10px] md:text-xs text-gray-500">
                     Farashkhana & Decorators
@@ -235,7 +235,7 @@ function Navbar() {
             )}
             <div>
               <h2 className="text-sm font-bold text-gray-800">
-                Shree Vallabh
+                 Vallabh
               </h2>
               <p className="text-[9px] text-gray-500">Menu</p>
             </div>

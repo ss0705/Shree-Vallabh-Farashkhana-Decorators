@@ -19,8 +19,9 @@ function AdminDashboard({ info, setInfo, gallery, setGallery, onSave }) {
         </div>
         <p className="admin-note">Changes auto-save and update the public website in this browser.</p>
       </section>
-      <AdminInfo info={info} setInfo={setInfo} />
       <AdminGallery gallery={gallery} setGallery={setGallery} />
+      <AdminInfo info={info} setInfo={setInfo} />
+      
       <Snackbar message={snackbar.message} type={snackbar.type} onClose={closeSnackbar} />
     </main>
   )

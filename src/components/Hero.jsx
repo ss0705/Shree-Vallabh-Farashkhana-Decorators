@@ -1,45 +1,48 @@
 // src/components/Hero.jsx
-import { motion } from 'framer-motion'
-import { Award, CalendarCheck, MapPin, Phone, Sparkles } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import useSiteData from '../hooks/useSiteData'
+import { motion } from "framer-motion";
+import { Award, CalendarCheck, MapPin, Phone, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import useSiteData from "../hooks/useSiteData";
 
 const badges = [
-  { icon: Award, textEn: '10+ Years Experience', textGu: '10+ વર્ષનો અનુભવ' },
-  { icon: CalendarCheck, textEn: '500+ Events', textGu: '500+ ઇવેન્ટ્સ' },
-  { icon: MapPin, textEn: 'Vadodara #1', textGu: 'વડોદરા #1' },
-]
+  { icon: Award, textEn: "10+ Years Experience", textGu: "10+ વર્ષનો અનુભવ" },
+  { icon: CalendarCheck, textEn: "500+ Events", textGu: "500+ ઇવેન્ટ્સ" },
+  { icon: MapPin, textEn: "Vadodara #1", textGu: "વડોદરા #1" },
+];
 
 const heroImg =
-  'https://res.cloudinary.com/deykvluax/image/upload/v1779474763/Gemini_Generated_Image_7t8j7p7t8j7p7t8j_g7k6bt.png'
+  "https://res.cloudinary.com/djovuw5dq/image/upload/v1779563675/Gemini_Generated_Image_atlancatlancatla_yr03mx.png";
 
 function Hero() {
-  const { t, i18n } = useTranslation()
-  const { content } = useSiteData()
-  const isGujarati = i18n.language === 'gu'
+  const { t, i18n } = useTranslation();
+  const { content } = useSiteData();
+  const isGujarati = i18n.language === "gu";
 
   const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId)
+    const section = document.getElementById(sectionId);
     if (section) {
-      const offset = 80
-      const elementPosition = section.offsetTop - offset
+      const offset = 80;
+      const elementPosition = section.offsetTop - offset;
       window.scrollTo({
         top: elementPosition,
-        behavior: 'smooth'
-      })
+        behavior: "smooth",
+      });
     }
-  }
+  };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24"
+    >
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
+        style={{
           backgroundImage: `url(${heroImg})`,
         }}
       />
-      
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 
@@ -49,7 +52,7 @@ function Hero() {
           className="max-w-4xl mx-auto text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Gujarati Headline */}
           <motion.h1
@@ -68,7 +71,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            {content.hero.headlineEn || "Shree Vallabh Farashkhana & Decorators"}
+            {content.hero.headlineEn || " Vallabh Farashkhana & Decorators"}
           </motion.h2>
 
           {/* Subtitle */}
@@ -78,7 +81,8 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            {content.hero.subline || "Vadodara's Most Trusted Wedding Decoration & Rental Service"}
+            {content.hero.subline ||
+              "Vadodara's Most Trusted Wedding Decoration & Rental Service"}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -89,18 +93,21 @@ function Hero() {
             transition={{ delay: 0.5, duration: 0.6 }}
           >
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               className="group inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-full shadow-lg hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105"
             >
-              <span>{t('hero.quote') || 'Get Free Quote'}</span>
-              <Sparkles size={18} className="group-hover:rotate-12 transition-transform" />
+              <span>{t("hero.quote") || "Get Free Quote"}</span>
+              <Sparkles
+                size={18}
+                className="group-hover:rotate-12 transition-transform"
+              />
             </button>
-            
+
             <button
-              onClick={() => scrollToSection('gallery')}
+              onClick={() => scrollToSection("gallery")}
               className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105"
             >
-              {t('hero.work') || 'View Our Work'}
+              {t("hero.work") || "View Our Work"}
             </button>
           </motion.div>
 
@@ -115,8 +122,11 @@ function Hero() {
               <motion.div
                 key={index}
                 className="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.2)' }}
-                transition={{ type: 'spring', stiffness: 400 }}
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "rgba(255,255,255,0.2)",
+                }}
+                transition={{ type: "spring", stiffness: 400 }}
               >
                 <Icon size={16} className="text-amber-400 sm:w-5 sm:h-5" />
                 <span className="text-white text-xs sm:text-sm font-medium whitespace-nowrap">
@@ -157,13 +167,17 @@ function Hero() {
             <motion.div
               className="w-1 h-2 bg-white/50 rounded-full mt-1"
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
           </div>
         </div>
       </motion.div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

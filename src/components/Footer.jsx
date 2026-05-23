@@ -16,21 +16,23 @@ function Footer() {
           
           {/* Column 1 - Brand & About */}
           <div className="space-y-4">
-            {/* Logo and Brand */}
+            {/* Logo and Brand - WITH CREAM BACKGROUND ON LOGO */}
             <div className="flex items-center justify-center sm:justify-start gap-3">
               {content.logoUrl ? (
-                <img 
-                  src={content.logoUrl} 
-                  alt={content.logoAlt || "Logo"} 
-                  className="h-12 w-auto object-contain"
-                />
+                <div className="bg-amber-50 p-2 rounded-xl shadow-md">
+                  <img 
+                    src={content.logoUrl} 
+                    alt={content.logoAlt || "Logo"} 
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
               ) : (
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-white">
                   <span className="text-lg">✦</span>
                 </div>
               )}
               <div>
-                <h2 className="text-xl font-bold text-white">શ્રી વલ્લભ</h2>
+                <h2 className="text-xl font-bold text-white">વલ્લભ</h2>
                 <p className="text-xs text-gray-400">Farashkhana & Decorators</p>
               </div>
             </div>
@@ -52,7 +54,7 @@ function Footer() {
                 <FaWhatsapp size={18} />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/vallabhevent?igsh=bWMwN2Vzc25hNTAw" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center hover:from-purple-700 hover:to-pink-700 transition-all hover:scale-110"
@@ -61,7 +63,7 @@ function Footer() {
                 <FaInstagram size={18} />
               </a>
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/share/1a1G2db5GQ/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-blue-700 rounded-full flex items-center justify-center hover:bg-blue-800 transition-all hover:scale-110"
@@ -69,15 +71,7 @@ function Footer() {
               >
                 <FaFacebook size={18} />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-all hover:scale-110"
-                aria-label="Twitter"
-              >
-                <FaTwitter size={18} />
-              </a>
+              
             </div>
           </div>
 

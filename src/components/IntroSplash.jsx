@@ -21,7 +21,7 @@ function IntroSplash() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: -24 }}
           transition={{ duration: 0.55, ease: 'easeInOut' }}
-          aria-label="Welcome to Shree Vallabh Farashkhana and Decorators"
+          aria-label="Welcome to Vallabh Farashkhana and Decorators"
         >
           {/* Decorative Background Elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -31,9 +31,9 @@ function IntroSplash() {
 
           {/* Main Content */}
           <div className="relative z-10 text-center px-4">
-            {/* Logo Section */}
+            {/* Logo Section - ENLARGED */}
             <motion.div
-              className="mb-6 md:mb-8 flex items-center justify-center"
+              className="mb-8 md:mb-10 flex items-center justify-center"
               initial={{ scale: 0.7, rotate: -12, opacity: 0 }}
               animate={{ scale: 1, rotate: 0, opacity: 1 }}
               transition={{ duration: 0.75, type: 'spring', stiffness: 140 }}
@@ -41,14 +41,14 @@ function IntroSplash() {
               {content.logoUrl && !logoError ? (
                 <img 
                   src={content.logoUrl}
-                  alt={content.logoAlt || "Shree Vallabh Logo"}
-                  className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
+                  alt={content.logoAlt || " Vallabh Logo"}
+                  className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 object-contain"
                   style={{ animation: 'float 3s ease-in-out infinite' }}
                   onError={() => setLogoError(true)}
                 />
               ) : (
                 <span 
-                  className="text-6xl md:text-7xl lg:text-8xl text-amber-600 inline-block"
+                  className="text-8xl md:text-9xl lg:text-[8rem] text-amber-600 inline-block"
                   style={{ animation: 'float 3s ease-in-out infinite' }}
                   aria-hidden="true"
                 >
