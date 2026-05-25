@@ -1,8 +1,9 @@
-// src/components/WhatsAppButton.jsx - Fixed: no scroll hide + direct contact on click
+// src/components/WhatsAppButton.jsx - Fixed: proper country code handling + no scroll hide + direct contact on click
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
 const WhatsAppButton = ({
   phoneNumber,
+  countryCode = "91", // Default country code for India (change as needed)
   businessName = "Vallabh Farashkhana & Decorators",
   position = "bottom-right",
   offlineMessage = "We'll get back to you soon!",
@@ -16,7 +17,25 @@ const WhatsAppButton = ({
   const buttonRef = useRef(null);
   const inputRef = useRef(null);
 
-  const cleanPhone = (phoneNumber || "").replace(/\D/g, "");
+  // Format phone number with country code
+  const formatPhoneWithCountryCode = useCallback((phone, code) => {
+    // Remove all non-digit characters
+    let cleaned = phone.replace(/\D/g, "");
+    
+    // Remove any leading zeros
+    cleaned = cleaned.replace(/^0+/, "");
+    
+    // Check if country code is already present (2-4 digits at start)
+    // This prevents duplicate country codes
+    if (cleaned.startsWith(code)) {
+      return cleaned;
+    }
+    
+    // Add country code
+    return code + cleaned;
+  }, []);
+
+  const cleanPhone = formatPhoneWithCountryCode(phoneNumber || "", countryCode);
 
   // ── Business hours check ──────────────────────────────────────
   useEffect(() => {
@@ -73,10 +92,16 @@ const WhatsAppButton = ({
       if (!msg.trim()) return;
       setIsTyping(true);
       setTimeout(() => {
-        window.open(
-          `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`,
-          "_blank",
-        );
+        // Validate phone number before opening
+        if (cleanPhone && cleanPhone.length >= 10) {
+          window.open(
+            `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`,
+            "_blank",
+          );
+        } else {
+          console.error("Invalid phone number format:", cleanPhone);
+          alert("Please configure a valid phone number with country code.");
+        }
         setIsTyping(false);
         setIsOpen(false);
         setCustomMsg("");
@@ -94,10 +119,15 @@ const WhatsAppButton = ({
   // ── Direct "Chat Now" — opens WhatsApp immediately ────────────
   const openDirect = () => {
     const defaultMsg = `Namaste! I'm interested in your services. Can you help me?`;
-    window.open(
-      `https://wa.me/${cleanPhone}?text=${encodeURIComponent(defaultMsg)}`,
-      "_blank",
-    );
+    if (cleanPhone && cleanPhone.length >= 10) {
+      window.open(
+        `https://wa.me/${cleanPhone}?text=${encodeURIComponent(defaultMsg)}`,
+        "_blank",
+      );
+    } else {
+      console.error("Invalid phone number format:", cleanPhone);
+      alert("Service temporarily unavailable. Please try again later.");
+    }
   };
 
   const quickReplies = [
